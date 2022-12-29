@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}
+        <a href="/publisher">Publisher</a>: {{ Publisher }}
+        &nbsp &nbsp
+        <a href="/tag">Tag</a>: {{ Tag }}
+        &nbsp &nbsp
+        <a href="/platform/">Platform</a>: {{ Platform }}
+    {% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <h2>Search result:</h2>
+
+    <p></p>
+    {% for g in search %}
+        <li><a href="/game/{{ g.g_id }}">{{g.g_name }}</a></li>
+    {% endfor %}
+
+
+{% endblock %}

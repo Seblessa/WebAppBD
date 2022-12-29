@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %} Games 3 way search {% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+
+    <form action="/game/3waySearchResult/">
+        <label for="Publisher">Publisher:</label>
+        <input id="Publisher" name="Publisher" value="Bethesda"><br><br>
+        <label for="Tag">Tag:</label>
+        <input id="Tag" name="Tag" value="Open World"><br><br>
+        <label for="Platform">Platform:</label>
+        <input id="Platform" name="Platform" value="Windows"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+
+{% endblock %}

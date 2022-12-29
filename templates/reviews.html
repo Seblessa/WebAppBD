@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}Review info of <a href="/game/{{ reviews.g_id }}">{{reviews.name }}</a> {% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <h2>{{reviews.rating}}</h2>
+    <p>
+        <b>Id: </b>{{ reviews.r_id }}
+    </p>
+
+    <p>
+        <b>Review: </b> <br>{{ reviews.review }}
+    </p>
+{% endblock %}

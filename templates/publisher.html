@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}{{ publisher.name }} {% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <h2>Publisher info</h2>
+    <p>
+        <b>Id: </b>{{ publisher.id }}
+    </p>
+    <p>
+        <b>Name: </b>{{ publisher.name }}
+    </p>
+    <p>
+        <b>Followers: </b>{{ publisher.followers }}
+    </p>
+
+    <b>Games: </b><ul>
+    {% for g  in game %}
+        <li><a href="/game/{{ g.id }}">{{g.name }}</a></li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}

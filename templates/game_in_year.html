@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Games release on {{ year }}</h2>
+
+    <table>
+        <tr>
+            <th><b>Name</b></th>
+            <th><b>Number of tags</b></th>
+        </tr>
+
+        {% for g in game %}
+            <tr>
+                <th><a href="/game/{{ g.id }}">{{g.name }}</a></th>
+                <th>{{ g.tags_count }}</th>
+            </tr>
+        {% endfor %}
+    </table>
+
+
+
+
+{% endblock %}

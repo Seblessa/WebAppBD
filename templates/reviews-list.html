@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}Reviews{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <table>
+        <tr>
+            <th><b>Id</b></th>
+            <th><b>Game</b></th>
+            <th><b>Rating</b></th>
+            <th><b>Review</b></th>
+        </tr>
+
+        {% for r in reviews %}
+            <tr>
+                <th><a href="/reviews/{{ r.r_id }}">{{r.r_id }}</a></th>
+                <th><a href="/game/{{ r.g_id }}">{{r.name }}</a></th>
+                <td>{{ r.rating }}</td>
+                <td>{{ r.review }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

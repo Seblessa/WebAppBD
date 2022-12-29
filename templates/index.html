@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}Game database {% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <h4>About</h4>
+    <p>This web application illustrates the use of our Game
+        database. The application is built using
+        <a href="https://pymysql.readthedocs.io/">PyMySQL</a>,
+        <a href="https://flask.palletsprojects.com">Flask</a>, and
+        <a href="https://jinja.palletsprojects.com">Jinja</a>.
+        <br>
+        <br>
+        Webpage created and designed by Margarida Vila Chã Nº202107923 and Sebastião Santos Lessa Nº202103238.
+    </p>
+
+    <h2>Some database statistics</h2>
+    <table>
+        <tr>
+            <th>Items</th>
+            <th>Count</th>
+        </tr>
+        <tr>
+            <th><a href="/game/">Games</a></th>
+            <td>{{stats.g}}</td>
+        </tr>
+        <tr>
+            <th><a href="/publisher/">Publishers</a></th>
+            <td>{{stats.p }}</td>
+        </tr>
+        <tr>
+            <th><a href="/tag/">Tags</a></th>
+            <td>{{stats.t }}</td>
+        </tr>
+        <tr>
+            <th><a href="/platform/">Platforms</a></th>
+            <td>{{stats.pl }}</td>
+        </tr>
+        <tr>
+            <th><a href="/reviews/">Reviews</a></th>
+            <td>{{stats.r }}</td>
+        </tr>
+    </table>
+
+    <h4>
+    <form action="javascript:window.open('/game_year_count/','_self')">
+        Games per Year &nbsp
+    <button class = "gfg" type="submit">
+        Go!
+    </button>
+    </form>
+    </h4>
+
+    <h4>
+        <form action="javascript:window.open('/game/3waySearch/','_self')">
+            Search with specific publisher, tag and platform &nbsp
+            <button class = "gfg" type="submit">
+                Go!
+            </button>
+        </form>
+    </h4>
+
+
+    <h2>Sample functionality</h2>
+
+
+    <h3>Games</h3>
+    <a href="/game">List all</a>
+
+    <p><h5>Get game info:</h5>
+    <form name="mid" action="javascript:window.open('/game/'+document.forms['mid'].elements['id'].value,'_self')">
+        Game Id:<input value="49" name="id" type="number" min="1"/><input type="submit" value="get"/>
+        </p>
+    </form>
+
+    Search by Name:
+    <form name="msearch" action="javascript:window.open('/game/search/'+document.forms['msearch'].elements['expr'].value,'_self')">
+        <input name="expr" id="expr" value="Battle" required/>
+        <input type="submit" value="search"/>
+    </form>
+
+    <p></p>
+
+    Search by Tags:
+    <form name="msearch1" action="javascript:window.open('/tag/search/'+document.forms['msearch1'].elements['expr1'].value,'_self')">
+        <input name="expr1" id="expr1" value="Action" required/>
+        <input type="submit" value="search"/>
+    </form>
+
+
+
+    <h3>Publishers</h3>
+    <a href="/publisher">List all</a>
+
+    <p><h5>Get Publisher info:</h5>
+    <form name="aid" action="javascript:window.open('/publisher/'+document.forms['aid'].elements['id'].value,'_self')">
+        Publisher Id:<input value="14" name="id" type="number" min="1"/><input type="submit" value="get"/>
+    </form>
+    </p>
+
+    Search by name:
+    <form name="asearch" action="javascript:window.open('/publisher/search/'+document.forms['asearch'].elements['expr'].value,'_self')">
+        <input name="expr" id="expr" value="Activision" required/>
+        <input type="submit" value="search"/>
+    </form>
+
+    <h3>Tags</h3>
+    <a href="/tag">List all</a>
+
+    <p><h5>Get tag info:</h5>
+    <form name="gid" action="javascript:window.open('/tag/'+document.forms['gid'].elements['id'].value,'_self')">
+        Tag Id:<input value="57" name="id" type="number" min="1"/><input type="submit" value="get"/>
+    </form>
+    </p>
+
+    <h3>Platforms</h3>
+    <a href="/platform/">List all</a>
+
+    <h3>Reviews</h3>
+    <a href="/reviews/">List all</a>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}Platforms{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <table>
+        <tr>
+            <th><b>Id</b></th>
+            <th><b>Name</b></th>
+            <th><b>Number of games</b></th>
+        </tr>
+
+        {% for p in platform %}
+            <tr>
+                <th><a href="/platform/{{ p.id }}">{{p.id }}</a></th>
+                <td>{{ p.name }}</td>
+                <td>{{ p.game_count }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

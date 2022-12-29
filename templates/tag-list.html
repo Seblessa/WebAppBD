@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}Tags{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <table>
+        <tr>
+            <th><b>Id</b></th>
+            <th><b>Name</b></th>
+            <th><b>Number of games</b></th>
+        </tr>
+
+        {% for t in tag %}
+            <tr>
+                <th><a href="/tag/{{ t.id }}">{{t.id }}</a></th>
+                <td>{{ t.name }}</td>
+                <td>{{ t.game_count }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

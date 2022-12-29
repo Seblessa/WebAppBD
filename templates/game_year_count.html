@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}Year Count{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <table>
+        <tr>
+            <th>Game release year</th>
+            <th>Count</th>
+        </tr>
+        {% for c in count %}
+            <tr>
+                <th><a href="/game_in_year/{{ c.release_year }}">{{c.release_year }}</a></th>
+                <td>{{ c.year_count }}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+{% endblock %}

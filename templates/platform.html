@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}{{ platform.name }} {% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <h2>Platforms info</h2>
+
+    <b>Id: </b>{{ platform.id }}
+
+    <p>
+        <b>Name: </b>{{ platform.name }}
+    </p>
+
+    <b>Games: </b><ul>
+    {% for g  in game %}
+        <li><a href="/game/{{ g.id }}">{{g.name }}</a></li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}

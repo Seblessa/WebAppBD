@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}{{ game.g_name }} {% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <h2>Game info</h2>
+    <p>
+        <b>Id: </b>{{ game.g_id }}
+    </p>
+    <p>
+        <b>Name: </b>{{ game.g_name }}
+    </p>
+    <p>
+        <b>Publisher: <a href="/publisher/{{ game.p_id }}">{{game.p_name }}</a></b>
+    </p>
+    <p>
+        <b>Price: </b>{{ game.price }}€
+    </p>
+    <p>
+
+        <b>Release year: <a href="/game_in_year/{{ game.release_year }}">{{game.release_year }}</a></b>
+    </p>
+    <p>
+        <b>Platforms: </b><ul>
+        {% for p  in platform %}
+            <li><a href="/platform/{{ p.id }}">{{p.name }}</a></li>
+        {% endfor %}
+    </ul>
+    </p>
+    <p>
+        <b>Tags: </b><ul>
+        {% for t  in tag %}
+            <li><a href="/tag/{{ t.id }}">{{t.name }}</a></li>
+        {% endfor %}
+        </ul>
+    </p>
+    <p>
+        <b>Reviews: </b><ul>
+        {% for r  in reviews %}
+            <b><a href="/reviews/{{ r.id }}">{{r.id }}</a></b>:
+            [{{r.rating }}], {{r.review }}
+            <br>
+        {% endfor %}
+        </ul>
+    </p>
+
+
+
+{% endblock %}
