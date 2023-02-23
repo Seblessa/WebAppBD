@@ -1,7 +1,7 @@
 
 # Sumário
 
-[Sebastião Santos Lessa](https://github.com/Seblessa/), DCC/FCUP
+[Sebastião Santos Lessa](https://github.com/seblessa/), DCC/FCUP
 
 Aplicação Python demonstrando o acesso à BD Games
 
