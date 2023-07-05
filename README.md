@@ -1,7 +1,9 @@
 
 # Sumário
 
-[Sebastião Santos Lessa](https://github.com/seblessa/), DCC/FCUP
+### Autores:
+- [Sebastião Santos Lessa](https://github.com/seblessa/), DCC/FCUP
+- [Margarida Vila Chã](https://github.com/margaridavc/), DCC/FCUP
 
 Aplicação Python demonstrando o acesso à BD Games
 
