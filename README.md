@@ -5,6 +5,8 @@
 - [Sebastião Santos Lessa](https://github.com/seblessa/), DCC/FCUP
 - [Margarida Vila Chã](https://github.com/margaridavc/), DCC/FCUP
 
+<br>
+
 Aplicação Python demonstrando o acesso à BD Games
 
 #  Referência
